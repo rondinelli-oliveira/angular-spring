@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Kitchen } from '../models/kitchen';
 
 @Component({
   selector: 'app-kitchens',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KitchensComponent implements OnInit {
 
-  constructor() { }
+  kitchens: Kitchen[] =[
+    {_id: "1", name: "Brasileira", category: "category", symbol: "Brasileira"}
+  ];
+  displayedColumns = ['_id', 'name', 'category', 'symbol'];
+
+  constructor() {
+    //this.kitchens = [];
+  }
 
   ngOnInit(): void {
   }
