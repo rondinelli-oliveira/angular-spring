@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Kitchen } from '../models/kitchen';
+import { KitchensService } from '../services/kitchens.service';
 
 @Component({
   selector: 'app-kitchens',
@@ -8,13 +10,15 @@ import { Kitchen } from '../models/kitchen';
 })
 export class KitchensComponent implements OnInit {
 
-  kitchens: Kitchen[] =[
-    {_id: "1", name: "Brasileira", category: "category", symbol: "Brasileira"}
-  ];
+  kitchens: Kitchen[] =[];
   displayedColumns = ['_id', 'name', 'category', 'symbol'];
 
-  constructor() {
+  //kitchensService: KitchensService;
+
+  constructor(private kitchensService: KitchensService) {
     //this.kitchens = [];
+    //this.kitchensService = new KitchensService();
+    this.kitchens = this.kitchensService.findAll();
   }
 
   ngOnInit(): void {
