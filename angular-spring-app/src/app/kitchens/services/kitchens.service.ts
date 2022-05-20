@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { first, tap } from 'rxjs/operators';
 
 import { Kitchen } from '../models/kitchen';
 
@@ -8,10 +9,14 @@ import { Kitchen } from '../models/kitchen';
 })
 export class KitchensService {
 
+  private readonly API = '/assets/kitchens.json';
+
   constructor(private httpClient: HttpClient) { }
-    findAll(): Kitchen[] {
-      return [
-        {_id: "1", name: "Brasileira", category: "category", symbol: "Brasileira"}
-      ];
+    findAll() {
+      return this.httpClient.get<Kitchen[]>(this.API)
+      .pipe(
+        first(),
+        tap(kitchens => console.log(kitchens))
+        );
     }
 }
