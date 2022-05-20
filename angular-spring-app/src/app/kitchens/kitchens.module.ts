@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
 
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { KitchensRoutingModule } from './kitchens-routing.module';
 import { KitchensComponent } from './kitchens/kitchens.component';
 
@@ -13,7 +13,7 @@ import { KitchensComponent } from './kitchens/kitchens.component';
   imports: [
     CommonModule,
     KitchensRoutingModule,
-    MatTableModule
+    AppMaterialModule
   ]
 })
 export class KitchensModule { }
