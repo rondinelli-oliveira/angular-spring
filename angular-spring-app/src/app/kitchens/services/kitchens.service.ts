@@ -16,7 +16,7 @@ export class KitchensService {
       return this.httpClient.get<Kitchen[]>(this.API)
       .pipe(
         first(),
-        delay(15000),
+        delay(5000),
         tap(kitchens => console.log(kitchens))
         );
     }
