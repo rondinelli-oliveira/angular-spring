@@ -11,7 +11,7 @@ import { KitchensService } from '../services/kitchens.service';
 })
 export class KitchensComponent implements OnInit {
 
-  kitchens: Observable<Kitchen[]>;
+  kitchens$: Observable<Kitchen[]>;
   //kitchens: Kitchen[] = [];
   displayedColumns = ['_id', 'name', 'category', 'symbol'];
 
@@ -20,7 +20,7 @@ export class KitchensComponent implements OnInit {
   constructor(private kitchensService: KitchensService) {
     //this.kitchens = [];
     //this.kitchensService = new KitchensService();
-    this.kitchens = this.kitchensService.findAll();
+    this.kitchens$ = this.kitchensService.findAll();
 
     //this.kitchensService.findAll().subscribe(kitchens => this.kitchens = kitchens);
   }
