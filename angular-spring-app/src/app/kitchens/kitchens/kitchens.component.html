@@ -10,26 +10,28 @@
       <!-- Table -->
       <!-- Id Column -->
       <ng-container matColumnDef="_id">
-        <th mat-header-cell *matHeaderCellDef> Código </th>
-        <td mat-cell *matCellDef="let kitchen"> {{ kitchen._id }} </td>
+        <th mat-header-cell *matHeaderCellDef> Código</th>
+        <td mat-cell *matCellDef="let kitchen"> {{ kitchen._id }}</td>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Nome </th>
-        <td mat-cell *matCellDef="let kitchen"> {{ kitchen.name }} </td>
+        <td mat-cell *matCellDef="let kitchen"> {{ kitchen.name }}</td>
       </ng-container>
 
       <!-- Category Column -->
       <ng-container matColumnDef="category">
         <th mat-header-cell *matHeaderCellDef> Categoria </th>
-        <td mat-cell *matCellDef="let kitchen"> {{ kitchen.category }} </td>
+        <td mat-cell *matCellDef="let kitchen"> {{ kitchen.category }}
+          <mat-icon aria-hidden="false" aria-label="Category">{{ kitchen.category | category }}</mat-icon>
+        </td>
       </ng-container>
 
       <!-- Symbol Column -->
       <ng-container matColumnDef="symbol">
         <th mat-header-cell *matHeaderCellDef> Simbolo </th>
-        <td mat-cell *matCellDef="let kitchen"> {{kitchen.symbol}} </td>
+        <td mat-cell *matCellDef="let kitchen">{{ kitchen.symbol }}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

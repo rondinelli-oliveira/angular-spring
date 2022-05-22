@@ -3,5 +3,15 @@
     "name": "Brasileira",
     "category": "category",
     "symbol": "symbol"
+  },
+  { "_id": "2",
+    "name": "Argentina",
+    "category": "category",
+    "symbol": "symbol"
+  },
+  { "_id": "3",
+    "name": "Outra",
+    "category": "category",
+    "symbol": "symbol"
   }
 ]
