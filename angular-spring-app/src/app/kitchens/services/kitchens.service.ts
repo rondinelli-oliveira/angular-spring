@@ -9,14 +9,14 @@ import { Kitchen } from '../models/kitchen';
 })
 export class KitchensService {
 
-  private readonly API = '/assets/kitchens.json';
+  private readonly API = 'api/kitchens';
 
   constructor(private httpClient: HttpClient) { }
     findAll() {
       return this.httpClient.get<Kitchen[]>(this.API)
       .pipe(
         first(),
-        delay(5000),
+        //delay(5000),
         tap(kitchens => console.log(kitchens))
         );
     }

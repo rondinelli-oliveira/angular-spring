@@ -1,5 +1,6 @@
 package com.evoltion.angularspringapi.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ public class Kitchen {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("_id")
     private Long id;
 
     @Column(length = 200, nullable = false)
