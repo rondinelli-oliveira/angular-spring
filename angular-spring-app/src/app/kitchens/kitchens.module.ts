@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { KitchensRoutingModule } from './kitchens-routing.module';
 import { KitchensComponent } from './kitchens/kitchens.component';
 import { KitchenFormComponent } from './kitchen-form/kitchen-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { KitchenFormComponent } from './kitchen-form/kitchen-form.component';
     CommonModule,
     KitchensRoutingModule,
     AppMaterialModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class KitchensModule { }
