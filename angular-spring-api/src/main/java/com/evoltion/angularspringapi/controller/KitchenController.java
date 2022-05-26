@@ -3,9 +3,9 @@ package com.evoltion.angularspringapi.controller;
 import com.evoltion.angularspringapi.model.Kitchen;
 import com.evoltion.angularspringapi.repository.KitchenRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,9 +16,17 @@ public class KitchenController {
 
     private KitchenRepository kitchenRepository;
 
+    //    @RequestMapping(method = RequestMethod.GET)
     @GetMapping
-//    @RequestMapping(method = RequestMethod.GET)
     public List<Kitchen> list() {
         return kitchenRepository.findAll();
+    }
+
+    //    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
+    public ResponseEntity<Kitchen> create(@RequestBody Kitchen kitchen) {
+//        kitchenRepository.save(kitchen);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(kitchenRepository.save(kitchen));
     }
 }
