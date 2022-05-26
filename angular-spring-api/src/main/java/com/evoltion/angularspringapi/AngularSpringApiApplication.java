@@ -21,18 +21,17 @@ public class AngularSpringApiApplication {
 
 			Kitchen kitchen = new Kitchen();
 			kitchen.setName("Brasileira");
-			kitchen.setCategory("Categoria");
-			kitchen.setSymbol("Brasil");
-
+//			kitchen.setCategory("Categoria");
+//			kitchen.setSymbol("Brasil");
 			Kitchen kitchen1 = new Kitchen();
 			kitchen1.setName("Japonesa");
-			kitchen1.setCategory("Categoria");
-			kitchen1.setSymbol("Japão");
+//			kitchen1.setCategory("Categoria");
+//			kitchen1.setSymbol("Japão");
 
 			Kitchen kitchen2 = new Kitchen();
 			kitchen2.setName("Argentina");
-			kitchen2.setCategory("Categoria");
-			kitchen2.setSymbol("Argentina");
+//			kitchen2.setCategory("Categoria");
+//			kitchen2.setSymbol("Argentina");
 
 			kitchenRepository.save(kitchen);
 			kitchenRepository.save(kitchen1);
